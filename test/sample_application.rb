@@ -1,3 +1,5 @@
+puts ENV.inspect
+
 require File.join(File.dirname(__FILE__), "..", "lib", "micro-mack")
 
 app.get("/") do
