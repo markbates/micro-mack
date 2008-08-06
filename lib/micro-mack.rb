@@ -10,7 +10,7 @@ module MicroMack
       
       def method_missing(sym, *args, &block)
         url = args[0]
-        action = "micro_mack_#{url == "/" ? "index" : url}".methodize
+        action = "#{sym}_micro_mack_#{url == "/" ? "index" : url}".methodize
         MicroMackController.send(:define_method, action, &block)
         Mack::Routes.build do |r|
           r.connect url, :controller => :micro_mack, :action => action, :method => sym

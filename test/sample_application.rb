@@ -10,14 +10,14 @@ end
 
 app.get("/posts/new") do
  text %{
-<form action="/posts/create" method="post">
+<form action="/posts/new" method="post">
   <input type="text" name="id" value=""/>
   <input type="submit" value="Submit" />
 </form>
   }
 end
 
-app.post("/posts/create") do
+app.post("/posts/new") do
   text "id: #{params[:id]}"
 end
 
